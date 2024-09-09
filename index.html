@@ -53,28 +53,59 @@
 </nav>
 
     <header id="accueil" class="bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 text-white">
-        <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
-            <div class="text-center">
-                <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl">
-                    <span class="block">Bienvenue chez</span>
-                    <span class="block text-purple-300">SalutSalomé</span>
-                </h1>
-                <p class="mt-6 max-w-lg mx-auto text-xl sm:max-w-3xl">
-                    Découvrez l'art de la coiffure et du bien-être capillaire avec notre experte Salomé !
-                </p>
-                <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center">
-                    <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
-                        <a href="#services" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-purple-700 bg-white hover:bg-purple-50 sm:px-8">
-                            Nos Services
-                        </a>
-                        <a href="#contact" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 sm:px-8">
-                            Prendre RDV
-                        </a>
-                    </div>
+    <div class="max-w-7xl mx-auto py-16 px-4 sm:py-24 sm:px-6 lg:px-8">
+        <div class="text-center">
+            <h1 class="text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl animate-bounce">
+                <span class="block">Bienvenue chez</span>
+                <span class="block text-purple-300">SalutSalomé</span>
+            </h1>
+            <p class="mt-6 max-w-lg mx-auto text-xl sm:max-w-3xl animate-fade-in">
+                Découvrez l'art de la coiffure et du bien-être capillaire avec notre experte Salomé !
+            </p>
+            <div class="mt-10 max-w-sm mx-auto sm:max-w-none sm:flex sm:justify-center animate-pulse">
+                <div class="space-y-4 sm:space-y-0 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5">
+                    <a href="#services" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-purple-700 bg-white hover:bg-purple-50 sm:px-8 transition-transform transform hover:scale-105">
+                        Nos Services
+                    </a>
+                    <a href="#contact" class="flex items-center justify-center px-4 py-3 border border-transparent text-base font-medium rounded-md shadow-sm text-white bg-purple-600 hover:bg-purple-700 sm:px-8 transition-transform transform hover:scale-105">
+                        Prendre RDV
+                    </a>
                 </div>
             </div>
         </div>
-    </header>
+    </div>
+    <style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 2s ease-in;
+        }
+        .animate-bounce {
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        .animate-pulse {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+    </style>
+</header>
 
     <main>
         <section id="services" class="py-16 bg-white">
