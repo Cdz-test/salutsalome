@@ -298,7 +298,7 @@
         <div class="mt-16">
             <h3 class="text-2xl font-bold text-center mb-8">Découvrez Nos Offres Spéciales</h3>
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="card-container" onclick="toggleCard(this)">
                     <div class="card">
                         <div class="card-front bg-gradient-to-br from-purple-400 to-pink-500 p-6 rounded-lg shadow-lg">
                             <h4 class="text-xl font-semibold mb-3 text-white">Pack Relooking</h4>
@@ -315,7 +315,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="card-container" onclick="toggleCard(this)">
                     <div class="card">
                         <div class="card-front bg-gradient-to-br from-blue-400 to-green-500 p-6 rounded-lg shadow-lg">
                             <h4 class="text-xl font-semibold mb-3 text-white">Forfait Bien-être</h4>
@@ -332,7 +332,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="card-container" onclick="this.classList.toggle('is-flipped')">
+                <div class="card-container" onclick="toggleCard(this)">
                     <div class="card">
                         <div class="card-front bg-gradient-to-br from-yellow-400 to-red-500 p-6 rounded-lg shadow-lg">
                             <h4 class="text-xl font-semibold mb-3 text-white">Spécial Événement</h4>
@@ -395,6 +395,25 @@
             transform: rotateY(180deg);
         }
     </style>
+    <script>
+        function toggleCard(cardContainer) {
+            document.querySelectorAll('.card-container').forEach(container => {
+                if (container !== cardContainer) {
+                    container.classList.remove('is-flipped');
+                }
+            });
+            cardContainer.classList.toggle('is-flipped');
+        }
+
+        document.addEventListener('click', function(event) {
+            const isCard = event.target.closest('.card-container');
+            if (!isCard) {
+                document.querySelectorAll('.card-container').forEach(container => {
+                    container.classList.remove('is-flipped');
+                });
+            }
+        });
+    </script>
 </section>
 
         <section id="contact" class="py-16 bg-white">
